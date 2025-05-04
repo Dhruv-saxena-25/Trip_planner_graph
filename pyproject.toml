@@ -10,6 +10,7 @@ dependencies = [
     "langchain-google-genai>=2.1.4",
     "langchain-groq>=0.3.2",
     "langgraph>=0.4.1",
+    "markdown>=3.8",
     "python-dotenv>=1.1.0",
     "serpapi>=0.1.5",
     "streamlit>=1.45.0",
