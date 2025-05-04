@@ -1,12 +1,16 @@
 # 🧳 Trip Itinerary Planner
 
-A conversational trip itinerary planner built with [LangGraph](https://github.com/langgraph/langgraph) and custom LangChain tools. Given a eamil id, destination city, Start date, end date and Preferences it can:
+A conversational trip itinerary planner built with [LangGraph](https://langchain-ai.github.io/langgraph/tutorials/introduction/) and custom LangChain tools. Easily plan your next trip by getting weather forecasts, flight and hotel options, and detailed city insights—all from a single, natural-language interface.
 
+---
+
+# 🚀 Features
 - ✅ Fetch current/future weather via **WeatherAPI**  
 - ✈️ Find flight options via **Google SERP API**  
 - 🏨 Find hotel options via **Google SERP API**  
 - 📜 Fetch city information via LangChain’s **DuckDuckGoSearchRun**
 
+---
 
 # 🏗️ Architecture
 ```bash
@@ -31,6 +35,7 @@ Trip_planner_graph/
         └── weather.py        # WeatherAPI integration
 
 ```
+---
 
 # ⚙️ Installing Dependencies
 
