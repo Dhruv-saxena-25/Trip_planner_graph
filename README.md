@@ -10,6 +10,7 @@ A conversational trip itinerary planner built with [LangGraph](https://github.co
 
 # Project Structure
 
+```bash
 Trip_planner_graph/
 ├── .env                      # Environment variables (API keys, SMTP creds)
 ├── .env.example              # Template for environment variables
@@ -30,7 +31,7 @@ Trip_planner_graph/
         ├── hotel.py          # Google SERP hotel search tool
         └── weather.py        # WeatherAPI integration
 
-
+```
 # Prerequisites
 
 Ensure you have UV installed. You can install UV via:
