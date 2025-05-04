@@ -1,6 +1,6 @@
 # Trip Itinerary Planner
 
-A conversational trip itinerary planner built with [LangGraph](https://github.com/langgraph/langgraph) and custom LangChain tools. Given a destination city, it can:
+A conversational trip itinerary planner built with [LangGraph](https://github.com/langgraph/langgraph) and custom LangChain tools. Given a eamil id, destination city, Start date, end date and Preferences it can:
 
 - ✅ Fetch current/future weather via **WeatherAPI**  
 - ✈️ Find flight options via **Google SERP API**  
@@ -52,37 +52,40 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 pip install uv
 ```
 
-- Install Python-3.12 version
+### Install Python-3.12 version
 ```bash
 uv venv --python 3.12
 ```
 
-- Activating the Virtual Environment `macOS/Linux`
+### Activating the Virtual Environment 
+
+- macOS/Linux
 ```bash
 source .venv/bin/activate
 ```
 
-- Activating the Virtual Environment `Windows (PowerShell)`
+- Windows (PowerShell)
+
 ```bash
 .venv\Scripts\Activate
 ```
 
-- Single Packages
+### Single Packages
 ```bash
 uv pip install <package_name>
 ```
 
-- From a requirements.txt File
+### From a requirements.txt File
 ```bash
 uv pip install -r requirements.txt
 ```
 
-- To capture the exact versions of all installed packages, generate a lockfile:
+### To capture the exact versions of all installed packages, generate a lockfile:
 ```bash
 uv lock
 ```
 
-- To recreate your environment elsewhere (e.g. on CI or another machine), install exactly what’s in the lockfile:
+### To recreate your environment elsewhere (e.g. on CI or another machine), install exactly what’s in the lockfile:
 
 ```bash
 uv sync
