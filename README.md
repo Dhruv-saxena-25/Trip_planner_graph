@@ -1,4 +1,4 @@
-# Trip Itinerary Planner
+# 🧳 Trip Itinerary Planner
 
 A conversational trip itinerary planner built with [LangGraph](https://github.com/langgraph/langgraph) and custom LangChain tools. Given a eamil id, destination city, Start date, end date and Preferences it can:
 
@@ -32,7 +32,7 @@ Trip_planner_graph/
 
 ```
 
-# Installing Dependencies
+# ⚙️ Installing Dependencies
 
 Ensure you have UV installed. You can install UV via:
 
