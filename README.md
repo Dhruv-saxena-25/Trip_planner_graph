@@ -85,10 +85,11 @@ uv pip install -r requirements.txt
 uv lock
 ```
 
-```bash
-# Syncing Dependencies
 
+# Syncing Dependencies
 - To recreate your environment elsewhere (e.g. on CI or another machine), install exactly what’s in the lockfile:
+
+```bash
 uv sync
 ```
 
