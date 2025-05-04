@@ -7,6 +7,30 @@ A conversational trip itinerary planner built with [LangGraph](https://github.co
 - 🏨 Find hotel options via **Google SERP API**  
 - 📜 Fetch city information via LangChain’s **DuckDuckGoSearchRun**
 
+
+# Project Structure
+
+Trip_planner_graph/
+├── .env                      # Environment variables (API keys, SMTP creds)
+├── .env.example              # Template for environment variables
+├── .venv/                    # Python virtual environment
+├── app.py                    # Application entry point
+├── requirements.txt          # Project dependencies
+└── src/                      # Source code
+    ├── __init__.py
+    ├── graph/
+    │   └── built_graph.py    # LangGraph orchestration and entry point
+    ├── llms/
+    │   └── llms.py           # Language model configuration and wrappers
+    ├── mail/
+    │   └── email.py          # Email sending integration
+    └── tools/
+        ├── city.py           # DuckDuckGoSearchRun wrapper for city info
+        ├── flight.py         # Google SERP flight search tool
+        ├── hotel.py          # Google SERP hotel search tool
+        └── weather.py        # WeatherAPI integration
+
+
 # Prerequisites
 
 Ensure you have UV installed. You can install UV via:
