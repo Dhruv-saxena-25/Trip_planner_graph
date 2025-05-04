@@ -22,25 +22,33 @@ A conversational trip itinerary planner built with [LangGraph](https://langchain
 # 🏗️ Architecture
 ```bash
 Trip_planner_graph/
-├── .env                      # Environment variables (API keys, SMTP creds)
-├── .env.example              # Template for environment variables
-├── .venv/                    # Python virtual environment
-├── app.py                    # Application entry point
-├── requirements.txt          # Project dependencies
-└── src/                      # Source code
-    ├── __init__.py
+├── .env
+├── .venv/
+├── app.py
+├── requirements.txt
+└── src/
+    ├── __init__.py             # Package root
     ├── graph/
-    │   └── built_graph.py    # LangGraph orchestration and entry point
+    │   ├── __init__.py         # Package for graph orchestration
+    │   └── built_graph.py      # LangGraph entry point
     ├── llms/
-    │   └── llms.py           # Language model configuration and wrappers
+    │   ├── __init__.py         # Package for LLM wrappers
+    │   └── llms.py             # LLM configuration
     ├── mail/
-    │   └── email.py          # Email sending integration
-    └── tools/
-        ├── city.py           # DuckDuckGoSearchRun wrapper for city info
-        ├── flight.py         # Google SERP flight search tool
-        ├── hotel.py          # Google SERP hotel search tool
-        └── weather.py        # WeatherAPI integration
-
+    │   ├── __init__.py         # Package for emailing
+    │   └── email.py            # Email integration
+    ├── tools/
+    │   ├── __init__.py         # Package for tool wrappers
+    │   ├── city.py             # City info search
+    │   ├── flight.py           # Flight search
+    │   ├── hotel.py            # Hotel search
+    │   └── weather.py          # Weather lookup
+    ├── state/
+    │   ├── __init__.py         # Package for app state management
+    │   └── custom_state.py            # State manager module
+    └── planner/
+        ├── __init__.py         # Package for trip planning logic
+        └── plan.py             # Plan creation module
 ```
 ---
 
