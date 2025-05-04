@@ -8,8 +8,7 @@ A conversational trip itinerary planner built with [LangGraph](https://github.co
 - 📜 Fetch city information via LangChain’s **DuckDuckGoSearchRun**
 
 
-# Project Structure
-
+# 🏗️ Architecture
 ```bash
 Trip_planner_graph/
 ├── .env                      # Environment variables (API keys, SMTP creds)
@@ -32,7 +31,7 @@ Trip_planner_graph/
         └── weather.py        # WeatherAPI integration
 
 ```
-# Prerequisites
+# Installing Dependencies
 
 Ensure you have UV installed. You can install UV via:
 
@@ -63,10 +62,12 @@ uv venv --python 3.12
 - macOS/Linux
 source .venv/bin/activate
 ```
+
 ```bash
 - Windows (PowerShell)
 .venv\Scripts\Activate
 ```
+
 ```bash
 # Installing Packages
 
@@ -76,19 +77,18 @@ uv pip install <package_name>
 - From a requirements.txt File
 uv pip install -r requirements.txt
 ```
+
 ```bash
 # Locking Dependencies
 
 - To capture the exact versions of all installed packages, generate a lockfile:
 uv lock
+```
 
+```bash
 # Syncing Dependencies
 
 - To recreate your environment elsewhere (e.g. on CI or another machine), install exactly what’s in the lockfile:
 uv sync
 ```
 
-```bash
-## 🏗️ Architecture
-
-```
