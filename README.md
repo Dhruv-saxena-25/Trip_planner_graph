@@ -5,10 +5,17 @@ A conversational trip itinerary planner built with [LangGraph](https://langchain
 ---
 
 # 🚀 Features
-- ✅ Fetch current/future weather via **WeatherAPI**  
-- ✈️ Find flight options via **Google SERP API**  
-- 🏨 Find hotel options via **Google SERP API**  
-- 📜 Fetch city information via LangChain’s **DuckDuckGoSearchRun**
+
+- **Weather Forecasts**  
+  Fetch current and future weather via **WeatherAPI**.
+- **Flight Search**  
+  Discover flight options via **Google SERP API**.
+- **Hotel Search**  
+  Browse hotel options via **Google SERP API**.
+- **City Information**  
+  Retrieve detailed city data (history, attractions, travel tips) via **DuckDuckGoSearchRun**.
+- **Email Notifications**  
+  Send your planned trip itinerary directly to your inbox.
 
 ---
 
