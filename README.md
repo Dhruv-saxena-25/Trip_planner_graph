@@ -31,62 +31,57 @@ Trip_planner_graph/
         └── weather.py        # WeatherAPI integration
 
 ```
+
 # Installing Dependencies
 
 Ensure you have UV installed. You can install UV via:
 
-```bash
-# On macOS/Linux:
+- On macOS/Linux:
 
+```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
-```bash
-# On Windows:
+- On Windows
 
+```bash
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
-```bash
-# Or via pip:
+- Or via pip
 
+```bash
 pip install uv
 ```
 
+- Install Python-3.12 version
 ```bash
-# Install Python-3.12 version:
-
 uv venv --python 3.12
 ```
-```bash
-# Activating the Virtual Environment
 
-- macOS/Linux
+- Activating the Virtual Environment `macOS/Linux`
+```bash
 source .venv/bin/activate
 ```
 
+- Activating the Virtual Environment `Windows (PowerShell)`
 ```bash
-- Windows (PowerShell)
 .venv\Scripts\Activate
 ```
 
+- Single Packages
 ```bash
-# Installing Packages
-
--Single Packages
 uv pip install <package_name>
+```
 
 - From a requirements.txt File
+```bash
 uv pip install -r requirements.txt
 ```
 
-```bash
-# Locking Dependencies
-
 - To capture the exact versions of all installed packages, generate a lockfile:
+```bash
 uv lock
 ```
 
-
-# Syncing Dependencies
 - To recreate your environment elsewhere (e.g. on CI or another machine), install exactly what’s in the lockfile:
 
 ```bash
