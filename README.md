@@ -7,7 +7,7 @@ A conversational trip itinerary planner built with [LangGraph](https://github.co
 - 🏨 Find hotel options via **Google SERP API**  
 - 📜 Fetch city information via LangChain’s **DuckDuckGoSearchRun**
 
-## Prerequisites
+# Prerequisites
 
 Ensure you have UV installed. You can install UV via:
 
