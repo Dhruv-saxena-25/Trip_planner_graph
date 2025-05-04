@@ -28,7 +28,7 @@ uv venv --python 3.12
 # Activating the Virtual Environment
 
 source .venv/bin/activate
-
+```
 
 
 ## 🏗️ Architecture
