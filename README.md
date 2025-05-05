@@ -1,3 +1,4 @@
+# Settup for Hugging Face Space
 ---
 title: Trip_planner
 emoji: 🐨
@@ -35,33 +36,38 @@ A conversational trip itinerary planner built with [LangGraph](https://langchain
 # 🏗️ Architecture
 ```bash
 Trip_planner_graph/
-├── .env
-├── .venv/                      #
-├── app.py
-├── requirements.txt
-└── src/
-    ├── __init__.py             # Package root
-    ├── graph/
-    │   ├── __init__.py         # Package for graph orchestration
-    │   └── built_graph.py      # LangGraph entry point
-    ├── llms/
-    │   ├── __init__.py         # Package for LLM wrappers
-    │   └── llms.py             # LLM configuration
-    ├── mail/
-    │   ├── __init__.py         # Package for emailing
-    │   └── email.py            # Email integration
-    ├── tools/
-    │   ├── __init__.py         # Package for tool wrappers
-    │   ├── city.py             # City info search
-    │   ├── flight.py           # Flight search
-    │   ├── hotel.py            # Hotel search
-    │   └── weather.py          # Weather lookup
-    ├── state/
-    │   ├── __init__.py         # Package for app state management
-    │   └── custom_state.py            # State manager module
-    └── planner/
-        ├── __init__.py         # Package for trip planning logic
-        └── plan.py             # Plan creation module
+├── .env                        # Store secret keys and credentials (not checked into VCS)
+├── .venv/                      # Python virtual environment directory
+├── app.py                      # Application entrypoint: initializes and runs the FastAPI/Flask server
+├── requirements.txt            # Pin project’s Python dependencies
+├── template.py                 # Scaffolding script: bootstraps all folders & stub files
+├── .github/                    # GitHub configuration directory
+│   └── workflows/
+│       └── main.yml            # GitHub Actions: CI/CD to deploy to Hugging Face Space
+└── src/                        # Main application source code
+    ├── __init__.py             # Marks `src/` as a Python package
+    ├── graph/                  # Graph orchestration layer
+    │   ├── __init__.py         # Marks `graph/` as a package
+    │   └── built_graph.py      # LangGraph entry point: builds & runs the planning graph
+    ├── llms/                   # LLM configuration & wrappers
+    │   ├── __init__.py         # Marks `llms/` as a package
+    │   └── llms.py             # Instantiates and configures LLM clients (OpenAI, etc.)
+    ├── mail/                   # Email integration
+    │   ├── __init__.py         # Marks `mail/` as a package
+    │   └── email.py            # Functions to format and send itinerary emails
+    ├── tools/                  # External tool wrappers (API clients)
+    │   ├── __init__.py         # Marks `tools/` as a package
+    │   ├── city.py             # Lookup city metadata (population, timezone, sights)
+    │   ├── flight.py           # Search & book flights via some flight-API
+    │   ├── hotel.py            # Search & book hotels via some hotel-API
+    │   └── weather.py          # Fetch weather forecasts for itinerary dates
+    ├── state/                  # Application state management
+    │   ├── __init__.py         # Marks `state/` as a package
+    │   └── custom_state.py     # Persistence layer: caches intermediate results
+    └── planner/                # Core trip-planning logic
+        ├── __init__.py         # Marks `planner/` as a package
+        └── plan.py             # Functions that assemble flights, hotels, and activities into a plan
+
 ```
 ---
 
@@ -125,4 +131,30 @@ uv sync
 ```
 
 # How To Run on Your System
+
+- Clone This Repository 
+
+```bash
+git clone https://github.com/Dhruv-saxena-25/Trip_planner_graph.git
+```
+
+- Add `.env` file and inside that .env add your secret keys
+
+```bash
+EMAIL = "******@example.com"   
+EMAIL_KEY = "**** **** **** ****"
+```
+
+- Create a virtul environment and activate it (Steps mentioned above)
+
+```bash
+uv pip install -r requirements.txt 
+```
+
+- Run `app.py' file
+
+```bash
+streamlit run app.py 
+```
+
 
