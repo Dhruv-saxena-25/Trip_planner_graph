@@ -9,6 +9,29 @@ import os
 
 # ─── Page Setup
 st.set_page_config(page_title="🧳 PlannyPack", layout="centered")
+
+
+# ─── Make the sidebar sticky 
+st.markdown(
+    """
+    <style>
+      /* pin the sidebar container to the viewport */
+      [data-testid="stSidebar"] {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        overflow-y: auto;
+      }
+      /* push the main content over to avoid overlap */
+      .css-1d391kg.e1g8pov61 {
+        margin-left: 20rem;
+      }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.title("✈️ Smart AI Travel Concierge ")
 
 # ─── Sidebar Intro
@@ -115,7 +138,6 @@ if submit:
 
             except Exception as e:
                 st.error(f"Error while planning: {e}")
-
 # ─── Follow-Up Form 
 if "input_state" in st.session_state and "thread_id" in st.session_state:
     st.markdown("---")
