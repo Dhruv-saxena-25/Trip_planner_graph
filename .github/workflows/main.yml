@@ -20,5 +20,5 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           EMAIL:    ${{ secrets.EMAIL }}
           EMAIL_KEY: ${{ secrets.EMAIL_KEY }}
-        run: git push --force https://Dhruv2508:$HF_TOKEN$EMAIL$EMAIL_KEY@huggingface.co/spaces/Dhruv2508/Trip_planner main
+        run: git push --force https://Dhruv2508:$HF_TOKEN@huggingface.co/spaces/Dhruv2508/Trip_planner main
           
