@@ -11,10 +11,12 @@ jobs:
         with:
           fetch-depth: 0
           lfs: false
+
+      - name: Ignore large files
+        run : git filter-branch --index-filter 'git rm -rf --cached --ignore-unmatch' HEAD
+      
       - name: Push to hub
-        env:
-          EMAIL:  ${{ secrets.EMAIL }}
-          EMAIL_KEY:  ${{ secrets.EMAIL_KEY }} 
+        env: 
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: git push --force https://Dhruv2508:$HF_TOKEN@huggingface.co/spaces/Dhruv2508/Trip_planner main
           
