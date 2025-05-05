@@ -27,13 +27,13 @@ Create detailed, personalized travel itineraries powered by LLMs.
 
 # ─── Sidebar LLM/API Configuration
 st.sidebar.header("🔧 LLM & API Configuration")
-# api_keys = {
-#     "SERP_API_KEY":    st.sidebar.text_input("SerpAPI Key",    type="password"),
-#     "WEATHER_API_KEY": st.sidebar.text_input("WeatherAPI Key", type="password"),
-# }
-SERP_API_KEY =  st.sidebar.text_input("SerpAPI Key",    type="password")
-WEATHER_API_KEY = st.sidebar.text_input("WeatherAPI Key", type="password")
-# ─── Sidebar inputs ───────────────────────────────────────────
+
+SERP_API_KEY =  st.sidebar.text_input("Serp API Key", type="password")
+st.sidebar.markdown("🔑 [Get Serp API Key](https://serpapi.com/dashboard)")
+WEATHER_API_KEY = st.sidebar.text_input("Weather API Key", type="password")
+st.sidebar.markdown("🔑 [Get Weather API Key](https://www.weatherapi.com/my/)")
+
+# ─── Sidebar inputs 
 provider = st.sidebar.selectbox("LLM Provider", ["Groq", "Gemini"])
 model_options = {
     "Groq":   ["qwen-qwq-32b", "mistral-saba-24b", "llama-3.3-70b-versatile"],
@@ -45,16 +45,18 @@ model_name = st.sidebar.selectbox("Model", model_options[provider])
 if provider == "Groq":
     groq_key = st.sidebar.text_input("Groq API Key", type="password")
     api_keys = {"GROQ_API_KEY": groq_key}
+    st.sidebar.markdown("🔑 [Get Groq API Key](https://console.groq.com/keys)")
 elif provider == "Gemini":
     google_key = st.sidebar.text_input("Gemini API Key", type="password")
     api_keys = {"GOOGLE_API_KEY": google_key}
+    st.sidebar.markdown("🔑 [Get Gemini API Key](https://aistudio.google.com/app/apikey)")
 
-# ─── Initialize LLM & Graph ─────────────────────────────────────
+# ─── Initialize LLM & Graph 
 llm = get_llm(provider, model_name, api_keys)
 graph = build_graph(llm, SERP_API_KEY, WEATHER_API_KEY)
 
 
-# ─── Main Trip Form ────────────────────────────────────────────────────────────
+# ─── Main Trip Form 
 with st.form("trip_form"):
     st.subheader("Enter Your Trip Details")
     user_email  = st.text_input("Enter your email")
@@ -66,7 +68,7 @@ with st.form("trip_form"):
     submit      = st.form_submit_button("Generate Itinerary")
 
 if submit:
-    # ── Validation ──────────────────────────────────────────────────────────────
+    # ── Validation 
     if not (user_email and start_city and city and user_input):
         st.error("Please fill in all fields.")
     elif start_date > end_date:
@@ -107,7 +109,7 @@ if submit:
             except Exception as e:
                 st.error(f"Error while planning: {e}")
 
-# ─── Follow-Up Form ─────────────────────────────────────────────────────────────
+# ─── Follow-Up Form 
 if "input_state" in st.session_state and "thread_id" in st.session_state:
     st.markdown("---")
     st.subheader("🔄 Need any tweaks?")
@@ -138,7 +140,7 @@ if "input_state" in st.session_state and "thread_id" in st.session_state:
             except Exception as e:
                 st.error(f"Error handling feedback: {e}")
 
-# ─── Send-Email Button ─────────────────────────────────────────────────────────
+# ─── Send-Email Button 
 if "itinerary" in st.session_state:
     st.markdown("---")
     if st.button("📧 Approve and Send Plan to Email"):
