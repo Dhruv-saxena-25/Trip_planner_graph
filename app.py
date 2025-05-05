@@ -2,14 +2,14 @@ import uuid
 import streamlit as st
 from datetime import date
 from src.llms.llm import get_llm
-from src.mail.email import email_sender
+from src.mail.email import email_config
 from src.graph.build_graph import build_graph
 import os
 
 
 # ─── Page Setup
 st.set_page_config(page_title="🧳 PlannyPack", layout="centered")
-st.title("🧠 Smart AI Travel Planner")
+st.title("✈️ Smart AI Travel Concierge ")
 
 # ─── Sidebar Intro
 st.sidebar.title("📌 About This App")
@@ -25,15 +25,17 @@ Create detailed, personalized travel itineraries powered by LLMs.
 """)
 
 
-# ─── Sidebar LLM/API Configuration
-st.sidebar.header("🔧 LLM & API Configuration")
+# ─── Sidebar LLM/API/EMAIL Configuration
+st.sidebar.header("🛰️ API Configuration")
 
-SERP_API_KEY =  st.sidebar.text_input("Serp API Key", type="password")
+SERP_API_KEY = st.sidebar.text_input("🔍 Serp API Key", type="password")
 st.sidebar.markdown("🔑 [Get Serp API Key](https://serpapi.com/dashboard)")
-WEATHER_API_KEY = st.sidebar.text_input("Weather API Key", type="password")
+
+WEATHER_API_KEY = st.sidebar.text_input("☁️ Weather API Key", type="password")
 st.sidebar.markdown("🔑 [Get Weather API Key](https://www.weatherapi.com/my/)")
 
 # ─── Sidebar inputs 
+st.sidebar.header("🤖 LLM Configuration")
 provider = st.sidebar.selectbox("LLM Provider", ["Groq", "Gemini"])
 model_options = {
     "Groq":   ["qwen-qwq-32b", "mistral-saba-24b", "llama-3.3-70b-versatile"],
@@ -43,18 +45,23 @@ model_name = st.sidebar.selectbox("Model", model_options[provider])
 
 # collect only the key you need
 if provider == "Groq":
-    groq_key = st.sidebar.text_input("Groq API Key", type="password")
+    groq_key = st.sidebar.text_input("🔗 Groq API Key", type="password")
     api_keys = {"GROQ_API_KEY": groq_key}
     st.sidebar.markdown("🔑 [Get Groq API Key](https://console.groq.com/keys)")
 elif provider == "Gemini":
-    google_key = st.sidebar.text_input("Gemini API Key", type="password")
+    google_key = st.sidebar.text_input("🔗 Gemini API Key", type="password")
     api_keys = {"GOOGLE_API_KEY": google_key}
     st.sidebar.markdown("🔑 [Get Gemini API Key](https://aistudio.google.com/app/apikey)")
+
+st.sidebar.header("📬 EMAIL Configuration")
+sender_email = st.sidebar.text_input("👤 Sender Email Id")
+sender_password = st.sidebar.text_input("🛡️ Sender Password", type="password")
+
 
 # ─── Initialize LLM & Graph 
 llm = get_llm(provider, model_name, api_keys)
 graph = build_graph(llm, SERP_API_KEY, WEATHER_API_KEY)
-
+email_sender = email_config(sender_email, sender_password)
 
 # ─── Main Trip Form 
 with st.form("trip_form"):
@@ -153,8 +160,7 @@ if "itinerary" in st.session_state:
                 success = email_sender(
                     destination_city=destination,
                     sender_id=recipient,
-                    result=result
-                )
+                    result=result)
             except Exception as e:
                 st.error(f"Email sender error: {e}")
                 success = False
