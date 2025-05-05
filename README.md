@@ -136,6 +136,7 @@ uv lock
 ```bash
 uv sync
 ```
+---
 
 # 💻 How To Run on Your System
 
