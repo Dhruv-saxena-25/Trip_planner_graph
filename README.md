@@ -1,3 +1,4 @@
+---
 title: Trip_planner
 emoji: 🐨
 colorFrom: blue
@@ -8,6 +9,7 @@ app_file: app.py
 pinned: false
 license: mit
 short_description: Plan Trip for You
+---
 
 # 🧳 Trip Itinerary Planner
 

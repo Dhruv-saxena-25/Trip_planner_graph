@@ -8,7 +8,10 @@ on:
 
 jobs:
   sync-to-hub:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-
+    env:
+      EMAIL:       ${{ secrets.EMAIL }}
+      EMAIL_KEY:   ${{ secrets.EMAIL_KEY }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -18,7 +21,5 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          EMAIL:    ${{ secrets.EMAIL }}
-          EMAIL_KEY: ${{ secrets.EMAIL_KEY }}
         run: git push --force https://Dhruv2508:$HF_TOKEN@huggingface.co/spaces/Dhruv2508/Trip_planner main
           
