@@ -38,18 +38,20 @@ A conversational trip itinerary planner built with [LangGraph](https://langchain
 # 🏗️ Architecture
 ```bash
 Trip_planner_graph/
-├── .env                        # Store secret keys and credentials (not checked into VCS)
-├── .venv/                      # Python virtual environment directory
-├── app.py                      # Application entrypoint: initializes and runs the FastAPI/Flask server
-├── requirements.txt            # Pin project’s Python dependencies
-├── template.py                 # Scaffolding script: bootstraps all folders & stub files
-├── .github/                    # GitHub configuration directory
+├── .env                        # Store secret keys and credentials.
+├── .venv/                      # Python virtual environment directory.
+├── app.py                      # Application entrypoint: initializes and runs the FastAPI/Flask server.
+├── requirements.txt            # Pin project’s Python dependencies.
+├── template.py                 # Scaffolding script: bootstraps all folders & stub files.
+├── assets/                     # Contain images that used in the project.              
+│   └── graph.png               # Langgraph Graph image for this project.
+├── .github/                    # GitHub configuration directory.
 │   └── workflows/
-│       └── main.yml            # GitHub Actions: CI/CD to deploy to Hugging Face Space
-└── src/                        # Main application source code
-    ├── __init__.py             # Marks `src/` as a Python package
-    ├── graph/                  # Graph orchestration layer
-    │   ├── __init__.py         # Marks `graph/` as a package
+│       └── main.yml            # GitHub Actions: CI/CD to deploy to Hugging Face Space.
+└── src/                        # Main application source code.
+    ├── __init__.py             # Marks `src/` as a Python package.
+    ├── graph/                  # Graph orchestration layer.
+    │   ├── __init__.py         # Marks `graph/` as a package.
     │   └── built_graph.py      # LangGraph entry point: builds & runs the planning graph
     ├── llms/                   # LLM configuration & wrappers
     │   ├── __init__.py         # Marks `llms/` as a package
