@@ -138,7 +138,8 @@ git clone https://github.com/Dhruv-saxena-25/Trip_planner_graph.git
 ```
 
 - Add `.env` file and inside that .env add your secret keys
-
+1) EMAIL: It the email address from which email is sent. (In my case I've used GMAIL)
+2) EMAIL_KEY: App specif passward. (In this case how you can get. Enable 2FA → Security → App passwords → Mail + Device “Python” → Generate → Copy 16-char password → use for next steps.)
 ```bash
 EMAIL = "******@example.com"   
 EMAIL_KEY = "**** **** **** ****"
