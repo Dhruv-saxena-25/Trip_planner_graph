@@ -111,3 +111,5 @@ uv lock
 uv sync
 ```
 
+# How To Run on Your System
+
