@@ -1,4 +1,3 @@
-# Settup for Hugging Face Space
 ---
 title: Trip_planner
 emoji: 🐨
