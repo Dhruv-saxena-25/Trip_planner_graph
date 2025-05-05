@@ -1,48 +1,48 @@
 import os
+from pathlib import Path
+import logging
 
-dirs = [
-    ".venv",
-    "src",
-    "src/graph",
-    "src/llms",
-    "src/mail",
-    "src/tools",
-    "src/state",
-    "src/planner",
+logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
+
+# List all files (and their parent dirs) you want to ensure exist.
+list_of_files = [
+    ".env",
+    "app.py",
+    "requirements.txt",
+    "template.py",
+    ".github/workflows/main.yml",
+    "src/__init__.py",
+    "src/graph/__init__.py",
+    "src/graph/built_graph.py",
+    "src/llms/__init__.py",
+    "src/llms/llms.py",
+    "src/mail/__init__.py",
+    "src/mail/email.py",
+    "src/tools/__init__.py",
+    "src/tools/city.py",
+    "src/tools/flight.py",
+    "src/tools/hotel.py",
+    "src/tools/weather.py",
+    "src/state/__init__.py",
+    "src/state/custom_state.py",
+    "src/planner/__init__.py",
+    "src/planner/plan.py",
 ]
 
-files = {
-    ".env": "",
-    "app.py": "",
-    "requirements.txt": "",
-    "src/__init__.py": "",
-    "src/graph/__init__.py": "",
-    "src/graph/built_graph.py": "",
-    "src/llms/__init__.py": "",
-    "src/llms/llms.py": "",
-    "src/mail/__init__.py": "",
-    "src/mail/email.py": "",
-    "src/tools/__init__.py": "",
-    "src/tools/city.py": "",
-    "src/tools/flight.py": "",
-    "src/tools/hotel.py": "",
-    "src/tools/weather.py": "",
-    "src/state/__init__.py": "",
-    "src/state/custom_state.py": "",
-    "src/planner/__init__.py": "",
-    "src/planner/plan.py": "",
-}
+for filepath_str in list_of_files:
+    filepath = Path(filepath_str)
+    filedir = filepath.parent
+    filename = filepath.name
 
-def create_structure():
-    for d in dirs:
-        os.makedirs(d, exist_ok=True)
-    for path, content in files.items():
-        parent = os.path.dirname(path)
-        if parent and not os.path.isdir(parent):
-            os.makedirs(parent, exist_ok=True)
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(content)
+    # create parent directories if needed
+    if filedir != Path():
+        os.makedirs(filedir, exist_ok=True)
+        logging.info(f"Creating directory: {filedir} for file: {filename}")
 
-if __name__ == "__main__":
-    create_structure()
-    print("Scaffold complete")
+    # create the file if it doesn't exist or is empty
+    if (not filepath.exists()) or (filepath.stat().st_size == 0):
+        with open(filepath, "w") as f:
+            pass
+        logging.info(f"Creating empty file: {filepath}")
+    else:
+        logging.info(f"{filename} already exists")
