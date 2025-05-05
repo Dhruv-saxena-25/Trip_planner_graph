@@ -1,4 +1,4 @@
-name: Sync to Hugging Face Sapce
+name: Sync to Hugging Face Space
 on:
   push:
     branches: [main]
@@ -19,7 +19,7 @@ jobs:
           lfs: false
 
       - name: Push to hub
-        env:
+        env: 
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: git push --force https://Dhruv2508:$HF_TOKEN@huggingface.co/spaces/$EMAIL/$EMAIL_KEY/Dhruv2508/Trip_planner main
           
