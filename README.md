@@ -32,7 +32,7 @@ A conversational trip itinerary planner built with [LangGraph](https://langchain
 
 ---
 
-# How the Graph Looks
+# 🗺️ How the Graph Looks
 ![Descriptive alt text](assets/graph.png)
 
 # 🏗️ Architecture
