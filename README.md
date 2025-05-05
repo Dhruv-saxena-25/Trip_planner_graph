@@ -1,3 +1,14 @@
+title: Trip_planner
+emoji: 🐨
+colorFrom: blue
+colorTo: red
+sdk: streamlit
+sdk_version: 1.42.0
+app_file: app.py
+pinned: false
+license: mit
+short_description: Plan Trip for You
+
 # 🧳 Trip Itinerary Planner
 
 A conversational trip itinerary planner built with [LangGraph](https://langchain-ai.github.io/langgraph/tutorials/introduction/) and custom LangChain tools. Easily plan your next trip by getting weather forecasts, flight and hotel options, and detailed city insights—all from a single, natural-language interface.
