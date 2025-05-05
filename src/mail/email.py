@@ -9,8 +9,8 @@ import os
 
 def email_sender(destination_city: str, sender_id, result: str):
     # --- Configuration ---
-    user = os.environ['EMAIL']
-    password = os.environ['EMAIL_KEY']
+    user = os.getenv['EMAIL']
+    password = os.getenv['EMAIL_KEY']
     to_email = sender_id
     subject = f"🧳 Your Travel Itinerary for {destination_city} City."
     

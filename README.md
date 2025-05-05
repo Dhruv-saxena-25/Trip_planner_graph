@@ -36,7 +36,7 @@ A conversational trip itinerary planner built with [LangGraph](https://langchain
 ```bash
 Trip_planner_graph/
 ├── .env
-├── .venv/
+├── .venv/                      #
 ├── app.py
 ├── requirements.txt
 └── src/
