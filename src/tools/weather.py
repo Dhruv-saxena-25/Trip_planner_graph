@@ -7,7 +7,7 @@ import datetime
 import requests
 import os 
 
-def weather_tool(llm, weather_api_keys):
+def weather_tool(llm, WEATHER_API_KEY):
     # ---- Weather Tool ----
     class WeatherRport(BaseModel):
         weather_information: str = Field(description="Give the detailed weather information report for the given city.")
@@ -74,10 +74,10 @@ def weather_tool(llm, weather_api_keys):
             # Use forecast.json for dates within the next 14 days (including today).
             elif delta_days <= 14:
                 no_of_days = delta_days + 1
-                url = f"http://api.weatherapi.com/v1/forecast.json?key={weather_api_keys}&q={city}&days={no_of_days}&aqi=no&alerts=no"
+                url = f"http://api.weatherapi.com/v1/forecast.json?key={WEATHER_API_KEY}&q={city}&days={no_of_days}&aqi=no&alerts=no"
             # Use future.json for dates between 15 and 299 days in the future.
             elif delta_days < 300:
-                url = f"http://api.weatherapi.com/v1/future.json?key={weather_api_keys}&q={city}&dt={current_date_str}"
+                url = f"http://api.weatherapi.com/v1/future.json?key={WEATHER_API_KEY}&q={city}&dt={current_date_str}"
             else:
                 weather_results[current_date_str] = "The entered date is too far in the future. Please enter a date less than 300 days from today."
                 continue
@@ -107,3 +107,4 @@ def weather_tool(llm, weather_api_keys):
                 weather_results[current_date_str] = f"Request failed: {e}"
         weather_information= weather_report_generation.invoke({"weather_results": weather_results})
         return {"weather_information": weather_information.weather_information}
+    return get_weather_data

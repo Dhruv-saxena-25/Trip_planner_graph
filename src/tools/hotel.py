@@ -8,7 +8,7 @@ import datetime
 import os
 
 
-def hotel_tool(llm, serp_api_keys):
+def hotel_tool(llm, SERP_API_KEY):
 # ---- Hotel Tool ----
     class HotelReport(BaseModel):
         hotel_information: str = Field(description= "A readable hotel summary")
@@ -43,7 +43,7 @@ def hotel_tool(llm, serp_api_keys):
         check_in_date = state['start_date']
         check_out_date = state['end_date']
         search_params = {
-            'api_key': serp_api_keys,
+            'api_key': SERP_API_KEY,
             'engine': 'google_hotels',
             'hl': 'en',
             'gl': 'us',

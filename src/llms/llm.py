@@ -6,8 +6,9 @@ import os
 def get_llm(provider: str, model: str, api_keys: dict):
     if provider == "OpenAI":
         return ChatOpenAI(model=model, temperature=0.7)
-    elif provider == "Groq":        
-        return ChatGroq(model=model, api_key=api_keys["GROQ_API_KEY"], temperature=0.7)
+    elif provider == "Groq":
+        os.environ["GROQ_API_KEY"] = api_keys["GROQ_API_KEY"]        
+        return ChatGroq(model=model, temperature=0.7)
     elif provider == "Gemini":
         os.environ["GOOGLE_API_KEY"] = api_keys["GOOGLE_API_KEY"]
         return ChatGoogleGenerativeAI(model=model)

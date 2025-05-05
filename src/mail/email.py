@@ -13,7 +13,7 @@ passward = os.environ['EMAIL_KEY']
 
 def email_sender(destination_city: str, sender_id, result: str):
     # --- Configuration ---
-    user = user 
+    user = "saxena25dhruv@gmail.com" 
     password = passward 
     to_email = sender_id
     subject = f"🧳 Your Travel Itinerary for {destination_city} City."

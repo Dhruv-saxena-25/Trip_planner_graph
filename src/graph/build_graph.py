@@ -11,11 +11,11 @@ from typing_extensions import TypedDict, Optional
 from pydantic import BaseModel, Field, EmailStr
 import os
 
-def build_graph(llm, serp_api_keys, weather_api_keys):
+def build_graph(llm, SERP_API_KEY, WEATHER_API_KEY):
     city_report = city_tool()
-    get_weather_data = weather_tool(llm, weather_api_keys)
-    flight_finder = flight_tool(llm, serp_api_keys) 
-    hotel_finder = hotel_tool(llm, serp_api_keys)
+    get_weather_data = weather_tool(llm, WEATHER_API_KEY)
+    flight_finder = flight_tool(llm, SERP_API_KEY) 
+    hotel_finder = hotel_tool(llm, SERP_API_KEY)
     plan_trip = planner(llm)
     human_feedback = feedback(llm)
     

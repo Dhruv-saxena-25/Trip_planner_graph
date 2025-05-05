@@ -7,7 +7,7 @@ from src.state.custom_state import FlightState
 import datetime
 import os 
 
-def flight_tool(llm, serp_api_keys):
+def flight_tool(llm, SERP_API_KEY):
 
     # ---- Flight Tool ----
     
@@ -66,7 +66,7 @@ def flight_tool(llm, serp_api_keys):
             return {"flight_report": "Could not retrieve IATA codes for the cities."}
         # Flight search via SerpAPI
         search_params = {
-            "api_key": serp_api_keys,
+            "api_key": SERP_API_KEY,
             "engine": "google_flights",
             "hl": "en",
             "gl": "us",
@@ -83,6 +83,6 @@ def flight_tool(llm, serp_api_keys):
         search = GoogleSearch(search_params)
         results = search.get_dict()
         # Generate flight summary
-        flight_info = flight_report_generation.invoke({"best_flights": results['best_flights']})
+        flight_info = flight_report_generation.invoke({"best_flights": results})
         return {"flight_informations": flight_info}
     return flight_finder
