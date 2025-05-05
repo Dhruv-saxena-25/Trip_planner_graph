@@ -18,9 +18,7 @@ A conversational trip itinerary planner built with [LangGraph](https://langchain
 
 ---
 
----
-
-# 🗺️ How the Graph Looks
+# 🗺️ How the Langgraph Graph Looks
 ![Descriptive alt text](assets/graph.png)
 
 ---
@@ -139,7 +137,7 @@ uv lock
 uv sync
 ```
 
-# How To Run on Your System
+# 💻 How To Run on Your System
 
 - Clone This Repository 
 
