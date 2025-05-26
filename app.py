@@ -47,6 +47,7 @@ Create detailed, personalized travel itineraries powered by LLMs.
 - Weather-aware clothing suggestions
 """)
 
+llm = None
 
 # ─── Sidebar LLM/API/EMAIL Configuration
 st.sidebar.header("🛰️ API Configuration")
@@ -183,8 +184,9 @@ if "itinerary" in st.session_state:
                     destination_city=destination,
                     sender_id=recipient,
                     result=result)
+                st.success(f"The itinerary has been successfully sent to {recipient}.")
             except Exception as e:
-                st.error(f"Email sender error: {e}")
+                st.error(f"An error occurred while sending the email: {e}")
                 success = False
 
 
