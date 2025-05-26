@@ -167,3 +167,9 @@ uv pip install -r requirements.txt
 streamlit run app.py 
 ```
 ---
+
+# 🚀 Deployment
+
+The project is live and accessible at the following link:
+
+[Trip Planner - Live Demo](https://huggingface.co/spaces/Dhruv2508/Trip_planner) 
