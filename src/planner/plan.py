@@ -92,7 +92,19 @@ def planner(llm):
         - Integrate weather details: temperature, condition, and what to wear.
         - Add time suggestions (if applicable) and helpful local tips.
         - Acknowledge the user's input and preferences throughout the plan.
+        
+        **6. Estimated Overall Trip Cost:**
+        - Provide an approximate breakdown of total trip costs based on:
+        - Flight choice (per person)
+        - Hotel accommodation (total for stay)
+        - Daily food budget (estimate per day × number of days)
+        - Transportation (e.g., local travel, taxis, trains)
+        - Entry fees to attractions (if applicable)
+        - Optional tours or excursions
+        - Present a clear total cost estimate and note any possible savings or upgrades.
+        - Tailor cost estimates to suit the user’s preferences (luxury, mid-range, or budget).
 
+        
         Your goal is to deliver a trip plan that is well-organized, weather-aware, and helps the user make the most of their experience in {city} including user insput as well {user_feedback}.
 
         """.strip()
