@@ -1,5 +1,5 @@
 ---
-title: Trip_planner
+title: Travel_concierge
 emoji: 🐨
 colorFrom: blue
 colorTo: red
