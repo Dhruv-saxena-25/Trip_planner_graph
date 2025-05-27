@@ -178,4 +178,4 @@ EMAIL_KEY = "**** **** **** ****"
 
 The project is live and accessible at the following link:
 
-👉 Try it now: [Trip Itinerary Planner on Hugging Face Spaces](https://huggingface.co/spaces/Dhruv2508/Trip_planner) 
+👉 Try it now: [Trip Itinerary Planner on Hugging Face Spaces](https://huggingface.co/spaces/Dhruv2508/Travel_concierge) 
