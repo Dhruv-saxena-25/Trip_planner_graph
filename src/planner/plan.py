@@ -52,6 +52,7 @@ def planner(llm):
         - Origin and destination
         - Departure and arrival times
         - Flight Number
+        - Airline Number
         - Airline(s)
         - Duration
         - Pricing (if available)

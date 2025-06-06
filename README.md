@@ -46,6 +46,7 @@ Trip_planner_graph/
 ├── app.py                      # Application entrypoint: initializes and runs the FastAPI/Flask server.
 ├── requirements.txt            # Pin project’s Python dependencies.
 ├── template.py                 # Scaffolding script: bootstraps all folders & stub files.
+├── Dockerfile                  # Creating docker image for your code.
 ├── assets/                     # Contain images that used in the project.              
 │   └── graph.png               # Langgraph Graph image for this project.
 ├── .github/                    # GitHub configuration directory.
@@ -174,6 +175,22 @@ EMAIL_KEY = "**** **** **** ****"
 ```
 ---
 
+# 🐳 Docker Support
+- Want to run the project in a Docker container?
+
+### Pull the Docker image:
+```bash
+docker pull dhruv89/trip_planner:latest
+```
+### Run the container:
+
+```bash
+docker run -d -p 8501:8501 dhruv89/trip_planner
+
+```
+- This runs the Streamlit app and exposes it on port 8501.
+
+---
 # 🚀 Deployment Link
 
 The project is live and accessible at the following link:

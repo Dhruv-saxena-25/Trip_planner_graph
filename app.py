@@ -63,7 +63,7 @@ st.sidebar.header("🤖 LLM Configuration")
 provider = st.sidebar.selectbox("LLM Provider", ["Groq", "Gemini"])
 model_options = {
     "Groq":   ["qwen-qwq-32b", "mistral-saba-24b", "llama-3.3-70b-versatile"],
-    "Gemini": ["gemini-2.0-flash-001", "gemini-1.5-pro", "gemini-2.0-flash", "gemini-2.5-pro-preview"],
+    "Gemini": ["gemini-1.5-flash", "gemini-2.0-flash-001", "gemini-1.5-pro", "gemini-2.0-flash", "gemini-2.5-pro-preview"],
 }
 model_name = st.sidebar.selectbox("Model", model_options[provider])
 
