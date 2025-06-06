@@ -30,7 +30,6 @@ MANIFEST
 .venv
 .env
 .python-version
-Dockerfile
 poster 
 # PyInstaller
 #  Usually these files are written by a python script from a template
