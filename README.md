@@ -185,7 +185,7 @@ docker pull dhruv89/trip_planner:latest
 ### Run the container:
 
 ```bash
-docker run -d -p 8501:8501 dhruv89/trip_planner
+docker run -p 8501:8501 dhruv89/trip_planner
 
 ```
 - This runs the Streamlit app and exposes it on port 8501.
