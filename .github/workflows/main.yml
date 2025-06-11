@@ -14,4 +14,4 @@ jobs:
       - name: Push to hub
         env: 
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://Dhruv2508:$HF_TOKEN@huggingface.co/spaces/Dhruv2508/trip_concierge main 
+        run: git push --force https://Dhruv2508:$HF_TOKEN@huggingface.co/spaces/Dhruv2508/Travel_concierge main 
