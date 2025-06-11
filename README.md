@@ -44,26 +44,8 @@ You can provide:
   - **Start Date**: `2025-07-15`  
   - **End Date**: `2025-07-25`
 
-- 👤 **Number of Travelers**  
-  _Example_: `2`
-
-- 🏨 **Hotel Preferences** _(optional)_  
-  _Example_: `3-star hotels near city center`
-
-- 💸 **Budget Range** _(optional)_  
-  _Example_: `$1500 - $2500`
-
-- 🧭 **Special Interests** _(optional)_  
+- 🧭 **Special Interests**   
   _Example_: `Museums, Art, Local Food, Historical Sites`
-
----
-
-Once submitted, the app will:
-
-1. Fetch the **weather forecast** for your trip dates.
-2. Search for **flights** and **hotels**.
-3. Compile **local attractions and city insights**.
-4. 📧 Optionally send a full itinerary to your email.
 
 ---
 
