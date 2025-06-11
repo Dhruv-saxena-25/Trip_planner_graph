@@ -23,11 +23,6 @@ A conversational trip itinerary planner built with [LangGraph](https://langchain
 
 ---
 
-# 🖥️ User Dashboard
-
-![Descriptive alt text](assets/UI.png)
----
-
 # 🧑‍💼 User Input
 
 Once the app is running, users can interact with the planner through a simple and intuitive input form in the **🖥️ User Dashboard**.
