@@ -23,11 +23,49 @@ A conversational trip itinerary planner built with [LangGraph](https://langchain
 
 ---
 
-# UI Interface
+# 🖥️ User Dashboard
 
 ![Descriptive alt text](assets/UI.png)
 ---
 
+# 🧑‍💼 User Input
+
+Once the app is running, users can interact with the planner through a simple and intuitive input form in the **🖥️ User Dashboard**.
+
+You can provide:
+
+- ✈️ **Departure City**  
+  _Example_: `New York`
+
+- 🏙️ **Destination City**  
+  _Example_: `Paris`
+
+- 📅 **Travel Dates**  
+  - **Start Date**: `2025-07-15`  
+  - **End Date**: `2025-07-25`
+
+- 👤 **Number of Travelers**  
+  _Example_: `2`
+
+- 🏨 **Hotel Preferences** _(optional)_  
+  _Example_: `3-star hotels near city center`
+
+- 💸 **Budget Range** _(optional)_  
+  _Example_: `$1500 - $2500`
+
+- 🧭 **Special Interests** _(optional)_  
+  _Example_: `Museums, Art, Local Food, Historical Sites`
+
+---
+
+Once submitted, the app will:
+
+1. Fetch the **weather forecast** for your trip dates.
+2. Search for **flights** and **hotels**.
+3. Compile **local attractions and city insights**.
+4. 📧 Optionally send a full itinerary to your email.
+
+---
 
 # 🚀 Features
 
