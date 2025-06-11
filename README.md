@@ -217,4 +217,3 @@ docker run -p 8501:8501 dhruv89/trip_planner
 The project is live and accessible at the following link:
 
 👉 Try it now: [Trip Itinerary Planner on Hugging Face Spaces](https://huggingface.co/spaces/Dhruv2508/Travel_concierge) 
-
