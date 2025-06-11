@@ -11,6 +11,8 @@ jobs:
         with:
           fetch-depth: 0
           lfs: false
+      - name: Ignore large files
+        run : git filter-branch --index-filter 'git rm -rf --cached --ignore-unmatch "assets/UI.png"' HEAD
       - name: Push to hub
         env: 
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
