@@ -106,7 +106,7 @@ def planner(llm):
         - Tailor cost estimates to suit the user’s preferences (luxury, mid-range, or budget).
 
         
-        Your goal is to deliver a trip plan that is well-organized, weather-aware, and helps the user make the most of their experience in {city} including user insput as well {user_feedback}.
+        Your goal is to deliver a trip plan that is well-organized, weather-aware, flight details, hotel details and helps the user make the most of their experience in {city} including user insput as well {user_feedback}.
 
         """.strip()
 

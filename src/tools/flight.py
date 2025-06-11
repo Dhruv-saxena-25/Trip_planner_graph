@@ -83,6 +83,6 @@ def flight_tool(llm, SERP_API_KEY):
         search = GoogleSearch(search_params)
         results = search.get_dict()
         # Generate flight summary
-        flight_info = flight_report_generation.invoke({"best_flights": results})
+        flight_info = flight_report_generation.invoke({"best_flights": results['best_flights']})
         return {"flight_informations": flight_info}
     return flight_finder
