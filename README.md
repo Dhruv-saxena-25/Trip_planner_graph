@@ -23,6 +23,12 @@ A conversational trip itinerary planner built with [LangGraph](https://langchain
 
 ---
 
+# UI Interface
+
+![Descriptive alt text](assets/UI.png)
+---
+
+
 # 🚀 Features
 
 - **Weather Forecasts**  
